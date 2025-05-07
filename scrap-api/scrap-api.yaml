@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gapscrap-deployment
+  name: scrap-api-deployment
 spec:
   selector:
     matchLabels:
-      app: gapscrap
+      app: scrap-api
   replicas: 2
   template:
     metadata:
       labels:
-        app: gapscrap
+        app: scrap-api
     spec:
       containers:
-        - name: grapscrap
+        - name: scrap-api
           image: fathhhhh/gapscrap:latest
           ports:
             - containerPort: 3000
@@ -21,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: dev-scrap-service
+  name: scrap-api-service
 spec:
   selector:
-    app: gapscrap
+    app: scrap-api
   ports:
     - protocol: TCP
       port: 80
