@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gapscrap-deployment
+spec:
+  selector:
+    matchLabels:
+      app: gapscrap
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: gapscrap
+    spec:
+      containers:
+        - name: grapscrap
+          image: fathhhhh/gapscrap:latest
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gapscrap-service
+spec:
+  selector:
+    app: gapscrap
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
