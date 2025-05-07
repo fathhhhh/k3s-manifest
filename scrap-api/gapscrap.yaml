@@ -21,7 +21,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gapscrap-service
+  name: dev-scrap-service
 spec:
   selector:
     app: gapscrap
