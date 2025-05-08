@@ -15,6 +15,7 @@ spec:
       containers:
         - name: scrap-api
           image: fathhhhh/gapscrap:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
 ---
